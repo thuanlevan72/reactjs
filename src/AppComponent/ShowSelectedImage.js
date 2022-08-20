@@ -13,6 +13,7 @@ function ShowSelectedImage() {
         const file = e.target.files[0]
          file.preview = URL.createObjectURL(file);
         setSelectedImage(file.preview);
+        e.target.value = null;
     }
   return (
     <div>
@@ -23,7 +24,7 @@ function ShowSelectedImage() {
               <input type="file" class="form-control-file" name="" onChange={getUrlImage} id="" placeholder="" aria-describedby="fileHelpId" />
               <small id="fileHelpId" class="form-text text-muted">Help text</small>
             </div>
-            <img src={selectedImage} class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" />
+            <img src={selectedImage} class="" alt="" />
         </div>
     </div>
   )
